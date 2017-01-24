@@ -55,7 +55,7 @@ public class TabuSearchSeries {
 
 
 
-	
+	// THE CORE methode, solve the n interval serie with t the size of the tabu list and the size of the serie
 	public static ArrayList<Integer> search(int maxRestart, int maxIter, int t,int n){
 		ArrayList<Integer> liste= new ArrayList<Integer>();
 		ArrayList<Integer> result= new ArrayList<Integer>();
@@ -84,15 +84,10 @@ public class TabuSearchSeries {
 					permutationInv.add(index1);
 
 
-					/*System.out.println("fonction cout liste 2 = "+fonctionCout(liste2)+
-							"   fonction cout liste 1 = "+fonctionCout(liste));
-					/*if(fonctionCout(liste)==0){
-						result=liste;
-					}*/
 					if(fonctionCout(liste2)<=fonctionCout(liste) && !tabu.contains(permutationInv)
 							&& !tabu.contains(permutation)){
 
-						//System.out.println("tabu list "+tabu.size()+" taille t = "+t);
+						
 						liste=liste2;
 						tabu.add(permutation);
 						tabu.add(permutationInv);
@@ -112,19 +107,11 @@ public class TabuSearchSeries {
 
 		return result;		
 	}
+	
+	// Test method
 	public static void main(String[] args) {
-		// Joue sur les param 
-		/*ArrayList<Integer> l=search(200,700,15,15);
-		System.out.println("Liste obtenue "+l);
 
-		ArrayList<Integer> l2=new ArrayList<Integer>();
-		for(int i=0;i<l.size()-1;i++){
-			l2.add(Math.abs(l.get(i)-l.get(i+1)));
-		}
-		System.out.println("Liste des intervalles : "+l2);*/
-
-
-		ArrayList<Integer> l3=new ArrayList<Integer>();
+		/*ArrayList<Integer> l3=new ArrayList<Integer>();
 		ArrayList<Integer> result=new ArrayList<Integer>();
 		long time=System.currentTimeMillis();
 		double tempsCalcul=0;
@@ -133,7 +120,7 @@ public class TabuSearchSeries {
 		while(t<=time+60000){
 			
 			l3=search(200,1000,40,20);
-			//System.out.println("Liste : "+l3);
+			
 			t=System.currentTimeMillis();
 			if(!l3.isEmpty()){
 				tempsCalcul=((t-time)*Math.pow(10,-3));
@@ -151,8 +138,6 @@ public class TabuSearchSeries {
 			System.out.println("Liste des intervalles : "+l4);
 			System.out.println("Temps de calcul de l'algorithme : "+tempsCalcul+"s");
 
-		}
-
-
+		}*/		
 	}
 }
