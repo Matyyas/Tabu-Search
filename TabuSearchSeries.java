@@ -27,17 +27,15 @@ public class TabuSearchSeries {
 		return liste;	
 	}
 	public static int fonctionCout(ArrayList<Integer> liste){
-		//System.out.println(liste);
+
 		int n=liste.size();
 		ArrayList<Integer> contraintes=new ArrayList<Integer>();
 		for(int i=0;i<n-1;i++){
 			contraintes.add(i,Math.abs(liste.get(i)-liste.get(i+1)));
 		}
-		//System.out.println(contraintes);
 		int value=0;
 		for(int i=1;i<=contraintes.size();i++){
 			if(contraintes.contains(i)){
-				//System.out.println(i);
 				value++;
 			}
 		}
@@ -48,7 +46,6 @@ public class TabuSearchSeries {
 		if(tabu.size()>=t){
 			tabu.remove(0);
 			tabu.remove(1);
-			//System.out.println("tabu upgrade");
 		}
 		return tabu;		
 	}
