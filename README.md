@@ -1,2 +1,2 @@
 # Tabu-Search
-Solving the n interval series with a tabu algorithm
+Solving the n interval series with a tabu algorithm from scratch
